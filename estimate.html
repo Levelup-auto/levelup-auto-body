@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Estimate | Level Up Auto Body</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1a2332;--dark:#0f1923;--accent:#2563eb;--accent-hover:#1d4ed8;--accent-light:#3b82f6;--white:#ffffff;--light:#f4f6f8;--gray:#6b7b8d;--text:#2c3e50;--green:#27ae60;--radius:8px;--shadow:0 2px 12px rgba(0,0,0,.08)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;color:var(--text);line-height:1.6;background:var(--light)}
+a{text-decoration:none;color:inherit}
+
+/* Nav */
+.topbar{background:var(--dark);color:var(--white);padding:8px 0;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar a{color:var(--accent-light)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.nav{background:var(--navy);padding:14px 0;position:sticky;top:0;z-index:100}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.5px}
+.logo span{color:var(--accent-light)}
+.nav-cta{background:var(--accent);color:var(--white);padding:10px 22px;border-radius:var(--radius);font-weight:700;font-size:15px;transition:background .2s}
+.nav-cta:hover{background:var(--accent-hover)}
+
+/* Header */
+.page-header{background:linear-gradient(135deg,var(--navy) 0%,#243447 100%);color:var(--white);padding:48px 0 40px;text-align:center}
+.page-header h1{font-size:clamp(26px,4vw,40px);font-weight:800;margin-bottom:8px}
+.page-header h1 em{color:var(--accent-light);font-style:normal}
+.page-header p{font-size:17px;opacity:.8;max-width:560px;margin:0 auto}
+
+/* Steps indicator */
+.steps-bar{background:var(--white);border-bottom:1px solid #e8ecf0;padding:20px 0}
+.steps-row{display:flex;justify-content:center;gap:40px}
+.step-ind{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--gray)}
+.step-ind.active{color:var(--accent)}
+.step-ind.done{color:var(--green)}
+.step-circle{width:32px;height:32px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.step-ind.active .step-circle{background:var(--accent);color:var(--white);border-color:var(--accent)}
+.step-ind.done .step-circle{background:var(--green);color:var(--white);border-color:var(--green)}
+
+/* Form area */
+.form-section{padding:40px 0 60px}
+.form-card{background:var(--white);border-radius:12px;padding:36px;box-shadow:var(--shadow);max-width:700px;margin:0 auto}
+.form-card h2{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.form-card .sub{font-size:15px;color:var(--gray);margin-bottom:24px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.field input,.field select{width:100%;padding:11px 14px;border:1px solid #dde2e8;border-radius:6px;font-size:15px;font-family:inherit}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* Photo upload */
+.upload-area{border:2px dashed #ccd3dc;border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:14px}
+.upload-area:hover,.upload-area.dragover{border-color:var(--accent);background:rgba(37,99,235,.03)}
+.upload-icon{font-size:48px;margin-bottom:10px;display:block}
+.upload-area h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+.upload-area p{font-size:14px;color:var(--gray)}
+.upload-area input{display:none}
+.previews{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:20px}
+.preview-thumb{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1;background:#eee}
+.preview-thumb img{width:100%;height:100%;object-fit:cover}
+.preview-thumb .remove{position:absolute;top:4px;right:4px;width:24px;height:24px;background:rgba(0,0,0,.6);color:white;border:none;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+
+/* Buttons */
+.btn-primary{background:var(--accent);color:var(--white);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px;width:100%;justify-content:center}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed}
+
+/* Loading */
+.loading-screen{display:none;text-align:center;padding:60px 20px}
+.loading-screen.show{display:block}
+.spinner{width:56px;height:56px;border:4px solid #e8ecf0;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-screen h2{font-size:22px;color:var(--navy);margin-bottom:8px}
+.loading-screen p{color:var(--gray);font-size:15px}
+.loading-steps{max-width:320px;margin:24px auto 0;text-align:left}
+.loading-step{padding:8px 0;font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px}
+.loading-step.active{color:var(--accent);font-weight:600}
+.loading-step.done{color:var(--green)}
+
+/* Estimate result */
+.estimate-result{display:none;max-width:700px;margin:0 auto}
+.estimate-result.show{display:block}
+.estimate-header{background:linear-gradient(135deg,var(--navy),#243447);color:var(--white);border-radius:12px 12px 0 0;padding:28px 32px;text-align:center}
+.estimate-header h2{font-size:24px;font-weight:800;margin-bottom:4px}
+.estimate-header p{opacity:.8;font-size:15px}
+.estimate-body{background:var(--white);border-radius:0 0 12px 12px;padding:32px;box-shadow:var(--shadow)}
+.damage-summary{background:var(--light);border-radius:8px;padding:20px;margin-bottom:24px;font-size:15px;color:var(--text);line-height:1.7}
+.damage-summary h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.line-items{width:100%;border-collapse:collapse;margin-bottom:24px}
+.line-items th{text-align:left;font-size:13px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;padding:10px 0;border-bottom:2px solid #e8ecf0}
+.line-items th:last-child{text-align:right}
+.line-items td{padding:12px 0;border-bottom:1px solid #f0f2f5;font-size:15px}
+.line-items td:last-child{text-align:right;font-weight:600;color:var(--navy)}
+.line-items .cat{font-size:12px;color:var(--gray);display:block}
+.total-row{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--accent);color:var(--white);border-radius:8px;font-weight:800;font-size:20px;margin-bottom:24px}
+.total-row .range{font-size:14px;font-weight:600;opacity:.85;margin-top:2px}
+.estimate-note{font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:24px;padding:16px;background:#fff8e1;border-radius:8px;border-left:4px solid #f5a623}
+.estimate-actions{display:flex;gap:12px}
+.estimate-actions a,.estimate-actions button{flex:1;text-align:center;padding:14px;border-radius:var(--radius);font-weight:700;font-size:15px;border:none;cursor:pointer}
+.btn-call{background:var(--accent);color:var(--white)}
+.btn-new{background:var(--light);color:var(--navy);border:1px solid #dde2e8}
+
+/* Footer */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer a{color:var(--accent-light)}
+
+/* Mobile */
+@media(max-width:768px){
+  .row-2{grid-template-columns:1fr}
+  .steps-row{gap:20px}
+  .step-ind span{display:none}
+  .estimate-actions{flex-direction:column}
+  .form-card{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar"><div class="wrap"><span>Mon–Fri 7AM–5PM | Sat 7AM–1PM</span><a href="tel:+17473483884">(747) 348-3884</a></div></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#" class="logo">LEVEL<span>UP</span> AUTO BODY</a>
+    <a href="tel:+17473483884" class="nav-cta">Call (747) 348-3884</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="page-header">
+  <div class="wrap">
+    <h1>Get a Free <em>AI Estimate</em> in Minutes</h1>
+    <p>Upload photos of the damage and our AI will generate a detailed repair estimate instantly.</p>
+  </div>
+</section>
+
+<!-- Steps -->
+<div class="steps-bar">
+  <div class="wrap">
+    <div class="steps-row">
+      <div class="step-ind active" id="s1"><div class="step-circle">1</div><span>Your Info</span></div>
+      <div class="step-ind" id="s2"><div class="step-circle">2</div><span>Upload Photos</span></div>
+      <div class="step-ind" id="s3"><div class="step-circle">3</div><span>Your Estimate</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="wrap">
+
+    <!-- Step 1: Info -->
+    <div class="form-card" id="step1">
+      <h2>Your Information</h2>
+      <div class="sub">Tell us about you and your vehicle.</div>
+      <div class="row-2">
+        <div class="field"><label>Full Name</label><input type="text" id="fname" placeholder="John Smith" required></div>
+        <div class="field"><label>Phone Number</label><input type="tel" id="phone" placeholder="(555) 123-4567" required></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label>Vehicle Year</label><input type="text" id="vyear" placeholder="2023"></div>
+        <div class="field"><label>Vehicle Make &amp; Model</label><input type="text" id="vmake" placeholder="Toyota Camry"></div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label>Insurance Provider</label>
+          <select id="insurance">
+            <option value="" disabled selected>Select your insurance</option>
+            <option>State Farm</option>
+            <option>GEICO</option>
+            <option>Progressive</option>
+            <option>Allstate</option>
+            <option>USAA</option>
+            <option>Farmers</option>
+            <option>Wawanesa</option>
+            <option>Liberty Mutual</option>
+            <option>Nationwide</option>
+            <option>Tesla Insurance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>Claim Number (if you have one)</label><input type="text" id="claim" placeholder="Optional"></div>
+      </div>
+      <button class="btn-primary" onclick="goStep2()">Next: Upload Photos &rarr;</button>
+    </div>
+
+    <!-- Step 2: Photos -->
+    <div class="form-card" id="step2" style="display:none">
+      <h2>Upload Damage Photos</h2>
+      <div class="sub">Upload 1–5 clear photos of the damage. More photos = more accurate estimate.</div>
+      <div class="upload-area" id="dropzone">
+        <span class="upload-icon">&#128247;</span>
+        <h3>Drag &amp; drop photos here</h3>
+        <p>or click to browse — JPG, PNG up to 10MB each</p>
+        <input type="file" id="fileInput" accept="image/*" multiple>
+      </div>
+      <div class="previews" id="previews"></div>
+      <button class="btn-primary" id="submitBtn" onclick="submitEstimate()" disabled>Get My AI Estimate &rarr;</button>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-screen" id="loading">
+      <div class="spinner"></div>
+      <h2>Analyzing Your Photos...</h2>
+      <p>Our AI is reviewing the damage and building your estimate.</p>
+      <div class="loading-steps">
+        <div class="loading-step active" id="ls1">&#9679; Analyzing damage from photos</div>
+        <div class="loading-step" id="ls2">&#9679; Identifying parts needed</div>
+        <div class="loading-step" id="ls3">&#9679; Calculating labor &amp; materials</div>
+        <div class="loading-step" id="ls4">&#9679; Generating your estimate</div>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="estimate-result" id="result">
+      <div class="estimate-header">
+        <h2>Your Repair Estimate</h2>
+        <p>Generated by AI — <span id="resultName"></span> | <span id="resultVehicle"></span></p>
+      </div>
+      <div class="estimate-body">
+        <div class="damage-summary" id="damageSummary"></div>
+        <table class="line-items">
+          <thead><tr><th>Repair Item</th><th>Est. Cost</th></tr></thead>
+          <tbody id="lineItems"></tbody>
+        </table>
+        <div class="total-row">
+          <div>Estimated Total<div class="range">* Range based on damage severity</div></div>
+          <div id="totalAmount"></div>
+        </div>
+        <div id="deductibleNote" class="total-row" style="background:var(--green)">
+          <div>Your Deductible Savings</div>
+          <div>Up to $1,000 Covered</div>
+        </div>
+        <div class="estimate-note">
+          <strong>Important:</strong> This is an AI-generated estimate based on photos only. Final pricing may vary after an in-person inspection. We'll contact you shortly to schedule a free in-person evaluation and confirm your estimate.
+        </div>
+        <div class="estimate-actions">
+          <a href="tel:+17473483884" class="btn-call">&#9742; Call Us Now</a>
+          <button class="btn-new" onclick="location.reload()">Get Another Estimate</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Level Up Auto Body. All rights reserved.</span>
+    <a href="mailto:repairs@levelupab.com">repairs@levelupab.com</a>
+  </div>
+</footer>
+
+<script>
+// State
+let photos = [];
+const MAX_PHOTOS = 5;
+
+// Step navigation
+function goStep2() {
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+  document.getElementById('s1').className = 'step-ind done';
+  document.getElementById('s1').querySelector('.step-circle').innerHTML = '&#10003;';
+  document.getElementById('s2').className = 'step-ind active';
+}
+
+// Drag & drop
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('dragover'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('dragover');
+  handleFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+function handleFiles(files) {
+  for (const file of files) {
+    if (photos.length >= MAX_PHOTOS) break;
+    if (!file.type.startsWith('image/')) continue;
+    if (file.size > 10 * 1024 * 1024) { alert('File too large: ' + file.name); continue; }
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      photos.push({ name: file.name, data: e.target.result });
+      renderPreviews();
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function renderPreviews() {
+  const container = document.getElementById('previews');
+  container.innerHTML = photos.map((p, i) =>
+    `<div class="preview-thumb"><img src="${p.data}" alt="${p.name}"><button class="remove" onclick="removePhoto(${i})">&times;</button></div>`
+  ).join('');
+  document.getElementById('submitBtn').disabled = photos.length === 0;
+  if (photos.length >= MAX_PHOTOS) dropzone.style.display = 'none';
+  else dropzone.style.display = '';
+}
+
+function removePhoto(i) {
+  photos.splice(i, 1);
+  renderPreviews();
+}
+
+// Submit
+async function submitEstimate() {
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const year = document.getElementById('vyear').value.trim();
+  const make = document.getElementById('vmake').value.trim();
+  const insurance = document.getElementById('insurance').value;
+  const claim = document.getElementById('claim').value.trim();
+  const vehicle = [year, make].filter(Boolean).join(' ') || 'Not specified';
+
+  // Show loading
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('s2').className = 'step-ind done';
+  document.getElementById('s2').querySelector('.step-circle').innerHTML = '&#10003;';
+  document.getElementById('s3').className = 'step-ind active';
+
+  // Animate loading steps
+  const steps = ['ls1','ls2','ls3','ls4'];
+  let si = 0;
+  const loadInterval = setInterval(() => {
+    if (si < steps.length - 1) {
+      document.getElementById(steps[si]).className = 'loading-step done';
+      document.getElementById(steps[si]).innerHTML = '&#10003; ' + document.getElementById(steps[si]).textContent.slice(2);
+      si++;
+      document.getElementById(steps[si]).className = 'loading-step active';
+    }
+  }, 2500);
+
+  try {
+    const response = await fetch('/api/estimate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name, phone, vehicle, insurance, claim,
+        photos: photos.map(p => p.data)
+      })
+    });
+
+    clearInterval(loadInterval);
+
+    if (!response.ok) throw new Error('Failed to generate estimate');
+    const data = await response.json();
+    showResult(data, name, vehicle);
+
+  } catch (err) {
+    clearInterval(loadInterval);
+    alert('Something went wrong generating your estimate. Please call us at (747) 348-3884 and we\'ll help you right away.');
+    console.error(err);
+  }
+}
+
+function showResult(data, name, vehicle) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').classList.add('show');
+
+  document.getElementById('resultName').textContent = name;
+  document.getElementById('resultVehicle').textContent = vehicle;
+
+  // Damage summary
+  document.getElementById('damageSummary').innerHTML =
+    '<h3>Damage Assessment</h3>' + data.summary;
+
+  // Line items
+  const tbody = document.getElementById('lineItems');
+  tbody.innerHTML = data.items.map(item =>
+    `<tr><td><strong>${item.description}</strong><span class="cat">${item.category}</span></td><td>${item.cost}</td></tr>`
+  ).join('');
+
+  // Total
+  document.getElementById('totalAmount').textContent = data.total;
+
+  // Scroll to result
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>
