@@ -137,6 +137,12 @@ footer a{color:var(--accent-light)}
   "priceRange": "$$"
 }
 </script>
+<!-- Google Ads Conversion Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-4239303896"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-4239303896');
+</script>
 </head>
 <body>
 
@@ -147,7 +153,7 @@ footer a{color:var(--accent-light)}
 <nav class="nav">
   <div class="wrap">
     <a href="#" class="logo">LEVEL<span>UP</span> AUTO BODY</a>
-    <a href="tel:+17473483884" class="nav-cta">Call (747) 348-3884</a>
+    <a href="tel:+17473483884" class="nav-cta" onclick="gtag('event','conversion',{send_to:'AW-4239303896/phone_click',value:3000,currency:'USD'});">Call (747) 348-3884</a>
   </div>
 </nav>
 
@@ -174,11 +180,11 @@ footer a{color:var(--accent-light)}
       <h1>Got a State Farm Claim? <em>We've Got You Covered.</em></h1>
       <p>We work directly with State Farm. No hassle. No paperwork. We cover your deductible up to $1,000.</p>
       <div class="hero-btns">
-        <a href="tel:+17473483884" class="btn-primary">&#9742; Call Now</a>
+        <a href="tel:+17473483884" class="btn-primary" onclick="gtag('event','conversion',{send_to:'AW-4239303896/phone_click',value:3000,currency:'USD'});">&#9742; Call Now</a>
         <a href="#form" class="btn-outline">Get Free Estimate</a>
       </div>
     </div>
-    <form class="hero-form" id="form" action="https://formsubmit.co/repairs@levelupab.com" method="POST">
+    <form class="hero-form" id="form" action="https://formsubmit.co/repairs@levelupab.com" method="POST" onsubmit="gtag('event','conversion',{send_to:'AW-4239303896/lead_form_submit',value:3000,currency:'USD'});">
       <h3>Get a Free Estimate</h3>
       <div class="subtitle">State Farm claims processed fast</div>
       <input type="hidden" name="_subject" value="New Lead from State Farm Claims Welcome Landing Page">
