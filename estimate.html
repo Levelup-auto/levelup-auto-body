@@ -115,6 +115,12 @@ footer a{color:var(--accent-light)}
   .form-card{padding:24px}
 }
 </style>
+<!-- Google Ads Conversion Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-4239303896"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-4239303896');
+</script>
 </head>
 <body>
 
@@ -388,6 +394,9 @@ function showResult(data, name, vehicle) {
 
   // Total
   document.getElementById('totalAmount').textContent = data.total;
+
+  // Track conversion
+  if(typeof gtag==='function'){gtag('event','conversion',{send_to:'AW-4239303896/lead_form_submit',value:3000,currency:'USD'});}
 
   // Scroll to result
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
