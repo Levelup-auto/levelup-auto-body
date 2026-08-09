@@ -28,7 +28,7 @@ module.exports = async function handler(req, res) {
     }).filter(Boolean);
 
     const message = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 2000,
       messages: [{
         role: 'user',
