@@ -7,9 +7,9 @@
     <meta name="description" content="Expert auto body & collision repair in Canoga Park, CA. Free estimates, free loaner car, lifetime warranty. We cover your deductible up to $1,000.">
     <link rel="canonical" href="https://ads.levelupab.com/00-general.html">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoBodyShop","name":"Level Up Auto Body","image":"https://ads.levelupab.com/gallery.html","url":"https://levelupab.com","telephone":"+17473483884","address":{"@type":"PostalAddress","streetAddress":"21417 Ingomar St #4","addressLocality":"Canoga Park","addressRegion":"CA","postalCode":"91304","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.2011,"longitude":-118.5981},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","bestRating":"5","ratingCount":"87"},"priceRange":"$$","areaServed":["Canoga Park","Woodland Hills","Northridge","Chatsworth","Encino","Van Nuys","Reseda","Winnetka","West Hills","Tarzana","Sherman Oaks","North Hollywood","Burbank"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Auto Body Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Collision Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Auto Painting"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dent Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bumper Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Frame Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Claims"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Estimates"}}]}}</script>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
             --orange: #F26522;
             --orange-dark: #D95A1E;
@@ -18,352 +18,84 @@
             --gray: #666;
             --gray-light: #f5f5f5;
             --white: #ffffff;
+            --green: #22c55e;
             --radius: 8px;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--dark);
-            background: var(--white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* HEADER */
-        .header {
-            background: var(--dark);
-            color: var(--white);
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-logo {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--dark); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .header { background: var(--dark); color: var(--white); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
         .header-logo span { color: var(--orange); }
-        .header-phone {
-            background: var(--orange);
-            color: var(--white);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: var(--radius);
-            font-weight: 700;
-            font-size: 15px;
-            transition: background 0.2s;
-        }
+        .header-phone { background: var(--orange); color: var(--white); text-decoration: none; padding: 10px 20px; border-radius: var(--radius); font-weight: 700; font-size: 15px; transition: background 0.2s; }
         .header-phone:hover { background: var(--orange-dark); }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
-            color: var(--white);
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 44px);
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px; }
         .hero h1 span { color: var(--orange); }
-        .hero p {
-            font-size: 18px;
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto 24px;
-        }
-        .hero-cta {
-            display: inline-block;
-            background: var(--orange);
-            color: var(--white);
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: var(--radius);
-            font-weight: 700;
-            font-size: 18px;
-            transition: background 0.2s, transform 0.2s;
-        }
+        .hero p { font-size: 18px; color: #ccc; max-width: 600px; margin: 0 auto 24px; }
+        .hero-cta { display: inline-block; background: var(--orange); color: var(--white); text-decoration: none; padding: 16px 40px; border-radius: var(--radius); font-weight: 700; font-size: 18px; transition: background 0.2s, transform 0.2s; }
         .hero-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
-        .hero-rating {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #aaa;
-        }
+        .hero-rating { margin-top: 20px; font-size: 14px; color: #aaa; }
         .hero-rating .stars { color: #FFD700; font-size: 18px; }
-
-        /* BENEFITS BAR */
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0;
-            background: var(--orange);
-            color: var(--white);
-        }
-        .benefit {
-            padding: 24px 20px;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.2);
-        }
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; background: var(--orange); color: var(--white); }
+        .benefit { padding: 24px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.2); }
         .benefit:last-child { border-right: none; }
         .benefit-icon { font-size: 28px; margin-bottom: 8px; }
         .benefit h3 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
         .benefit p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
-
-        /* MAIN CONTENT */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* SERVICES SECTION */
-        .services {
-            padding: 60px 20px;
-            background: var(--white);
-        }
-        .section-title {
-            text-align: center;
-            font-size: clamp(24px, 4vw, 32px);
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 16px;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .service-card {
-            background: var(--gray-light);
-            padding: 32px 24px;
-            border-radius: var(--radius);
-            text-align: center;
-            transition: transform 0.2s;
-        }
+        .services { padding: 60px 20px; background: var(--white); }
+        .section-title { text-align: center; font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .section-subtitle { text-align: center; color: var(--gray); font-size: 16px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .service-card { background: var(--gray-light); padding: 32px 24px; border-radius: var(--radius); text-align: center; transition: transform 0.2s; }
         .service-card:hover { transform: translateY(-4px); }
-        .service-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+        .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
         .service-card p { color: var(--gray); font-size: 14px; }
-
-        /* TWO COLUMN: FORM + WHY US */
-        .cta-section {
-            padding: 60px 20px;
-            background: var(--gray-light);
-        }
-        .cta-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: start;
-        }
-        @media (max-width: 768px) {
-            .cta-grid { grid-template-columns: 1fr; }
-        }
-
-        /* FORM */
-        .form-card {
-            background: var(--white);
-            padding: 32px;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .form-card h2 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-        .form-card .form-sub {
-            color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+        .cta-section { padding: 60px 20px; background: var(--gray-light); }
+        .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: start; }
+        @media (max-width: 768px) { .cta-grid { grid-template-columns: 1fr; } }
+        .form-card { background: var(--white); padding: 32px; border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .form-card h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        .form-card .form-sub { color: var(--gray); font-size: 14px; margin-bottom: 20px; }
         .form-group { margin-bottom: 14px; }
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: var(--dark);
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: var(--radius);
-            font-size: 15px;
-            font-family: inherit;
-            transition: border 0.2s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--orange);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .form-submit {
-            width: 100%;
-            padding: 14px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: var(--radius);
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 8px;
-        }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: var(--dark); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius); font-size: 15px; font-family: inherit; transition: border 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-submit { width: 100%; padding: 14px; background: var(--orange); color: var(--white); border: none; border-radius: var(--radius); font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
         .form-submit:hover { background: var(--orange-dark); }
-
-        /* WHY US */
-        .why-us h2 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-        .why-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-            align-items: flex-start;
-        }
-        .why-icon {
-            flex-shrink: 0;
-            width: 44px;
-            height: 44px;
-            background: var(--orange);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-        }
+        .form-success { display: none; text-align: center; padding: 40px 20px; }
+        .form-success .check { font-size: 48px; color: var(--green); margin-bottom: 12px; }
+        .form-success h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .form-success p { color: var(--gray); font-size: 14px; margin-bottom: 16px; }
+        .form-success a { display: inline-block; background: var(--orange); color: var(--white); text-decoration: none; padding: 14px 32px; border-radius: var(--radius); font-weight: 700; font-size: 16px; }
+        .why-us h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; }
+        .why-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+        .why-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--orange); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; }
         .why-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
         .why-text p { font-size: 14px; color: var(--gray); }
-
-        /* TESTIMONIALS */
-        .testimonials {
-            padding: 60px 20px;
-            background: var(--white);
-        }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .testimonial {
-            background: var(--gray-light);
-            padding: 28px;
-            border-radius: var(--radius);
-            position: relative;
-        }
+        .testimonials { padding: 60px 20px; background: var(--white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .testimonial { background: var(--gray-light); padding: 28px; border-radius: var(--radius); }
         .testimonial .stars { color: #FFD700; font-size: 16px; margin-bottom: 12px; display: block; }
-        .testimonial p {
-            font-size: 15px;
-            color: var(--dark);
-            font-style: italic;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
+        .testimonial p { font-size: 15px; color: var(--dark); font-style: italic; margin-bottom: 12px; line-height: 1.6; }
         .testimonial .author { font-size: 13px; font-weight: 700; color: var(--gray); }
-
-        /* INFO BAR */
-        .info-bar {
-            background: var(--dark);
-            color: var(--white);
-            padding: 40px 20px;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .info-item h3 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--orange);
-            margin-bottom: 8px;
-        }
+        .info-bar { background: var(--dark); color: var(--white); padding: 40px 20px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
+        .info-item h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); margin-bottom: 8px; }
         .info-item p { font-size: 15px; color: #ccc; line-height: 1.8; }
         .info-item a { color: var(--orange); text-decoration: none; font-weight: 600; }
-
-        /* FOOTER */
-        .footer {
-            background: var(--dark-2);
-            color: #888;
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-        }
-
-        /* MOBILE CTA */
-        .mobile-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--orange);
-            padding: 14px 20px;
-            z-index: 100;
-        }
-        .mobile-cta a {
-            display: block;
-            text-align: center;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-        }
-        @media (max-width: 768px) {
-            .mobile-cta { display: block; }
-            body { padding-bottom: 60px; }
-        }
+        .footer { background: var(--dark-2); color: #888; text-align: center; padding: 20px; font-size: 13px; }
+        .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); padding: 14px 20px; z-index: 100; }
+        .mobile-cta a { display: block; text-align: center; color: var(--white); text-decoration: none; font-weight: 700; font-size: 18px; }
+        @media (max-width: 768px) { .mobile-cta { display: block; } body { padding-bottom: 60px; } }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="header-logo">Level<span>Up</span> Auto Body</div>
         <a href="tel:+17473483884" class="header-phone">Call (747) 348-3884</a>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
         <h1>Expert Collision Repair<br><span>in Canoga Park</span></h1>
         <p>We work with all insurance companies. No paperwork for you. We cover your deductible up to $1,000.</p>
@@ -374,7 +106,6 @@
         </div>
     </section>
 
-    <!-- BENEFITS BAR -->
     <section class="benefits">
         <div class="benefit">
             <div class="benefit-icon">&#x1F4B0;</div>
@@ -398,9 +129,8 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services">
-        <h2 class="section-title">Full-Service Collision Repair</h2>
+        <h2 class="section-title">Our Services</h2>
         <p class="section-subtitle">From minor dents to major collisions, we handle it all with OEM parts and expert craftsmanship.</p>
         <div class="services-grid">
             <div class="service-card">
@@ -424,39 +154,39 @@
                 <p>We work with all insurance companies and handle the paperwork. Focus on your day — we handle the rest.</p>
             </div>
             <div class="service-card">
-                <h3>Free AI Estimate</h3>
-                <p>Upload photos of your damage and get an instant estimate. No appointment needed — fast and accurate.</p>
+                <h3>Glass & Detail</h3>
+                <p>Windshield repair coordination and full detail service so your vehicle looks showroom-ready when you pick it up.</p>
             </div>
         </div>
     </section>
 
-    <!-- FORM + WHY US -->
     <section class="cta-section">
         <div class="cta-grid">
             <div class="form-card">
-                <h2>Get Your Free Estimate</h2>
-                <p class="form-sub">Fill out the form and we'll contact you within 1 hour.</p>
-                <form id="estimate-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                <div id="form-container">
+                    <h2>Get Your Free Estimate</h2>
+                    <p class="form-sub">Fill out the form and we'll contact you within 1 hour.</p>
+                    <form id="estimate-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Vehicle Year</label>
+                                <input type="text" id="year" name="year" placeholder="2024">
+                            </div>
+                            <div class="form-group">
+                                <label for="make">Make & Model</label>
+                                <input type="text" id="make" name="make" placeholder="Toyota Camry">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="year">Vehicle Year</label>
-                            <input type="text" id="year" name="year" placeholder="2024">
-                        </div>
-                        <div class="form-group">
-                            <label for="make">Make & Model</label>
-                            <input type="text" id="make" name="make" placeholder="Toyota Camry">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label for="insurance">Insurance Company</label>
                         <select id="insurance" name="insurance">
@@ -472,12 +202,19 @@
                             <option value="none">No Insurance / Cash</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="damage">Describe the Damage</label>
-                        <textarea id="damage" name="damage" rows="3" placeholder="Tell us what happened..."></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">Request Free Estimate</button>
-                </form>
+                        <div class="form-group">
+                            <label for="damage">Describe the Damage</label>
+                            <textarea id="damage" name="damage" rows="3" placeholder="Tell us what happened..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Request Free Estimate</button>
+                    </form>
+                </div>
+                <div class="form-success" id="form-success">
+                    <div class="check">&#10003;</div>
+                    <h3>Request Received!</h3>
+                    <p>We'll contact you within 1 hour. For the fastest response, call us now:</p>
+                    <a href="tel:+17473483884">Call (747) 348-3884</a>
+                </div>
             </div>
 
             <div class="why-us">
@@ -490,45 +227,44 @@
                     </div>
                 </div>
                 <div class="why-item">
-                    <div class="why-icon">&#10003;</div>
+                    <div class="why-icon">✓</div>
                     <div class="why-text">
                         <h3>All Insurance Accepted</h3>
                         <p>We work with every insurance company. We handle all the paperwork and claims for you.</p>
                     </div>
                 </div>
                 <div class="why-item">
-                    <div class="why-icon">&#9733;</div>
+                    <div class="why-icon">★</div>
                     <div class="why-text">
                         <h3>OEM Parts & Paint</h3>
                         <p>We use original manufacturer parts and factory-match paint for a flawless finish.</p>
                     </div>
                 </div>
                 <div class="why-item">
-                    <div class="why-icon">&#9202;</div>
+                    <div class="why-icon">⏲</div>
                     <div class="why-text">
                         <h3>Fast Turnaround</h3>
                         <p>Most repairs completed in 3-5 business days. Free loaner car while your vehicle is in the shop.</p>
                     </div>
                 </div>
                 <div class="why-item">
-                    <div class="why-icon">&#8734;</div>
+                    <div class="why-icon">∞</div>
                     <div class="why-text">
                         <h3>Lifetime Warranty</h3>
                         <p>Every repair comes with a lifetime warranty. We stand behind our work, period.</p>
                     </div>
                 </div>
                 <div class="why-item">
-                    <div class="why-icon">&#128249;</div>
+                    <div class="why-icon">📷</div>
                     <div class="why-text">
-                        <h3>Free AI Estimate</h3>
-                        <p>Upload photos of your damage online and get an instant estimate. No appointment needed.</p>
+                        <h3>Photo Estimates</h3>
+                        <p>Text us photos of your damage and get a quick estimate. No appointment needed.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section class="testimonials">
         <h2 class="section-title">What Our Customers Say</h2>
         <p class="section-subtitle">4.8-star average from real Google reviews</p>
@@ -551,7 +287,6 @@
         </div>
     </section>
 
-    <!-- INFO BAR -->
     <section class="info-bar">
         <div class="info-grid">
             <div class="info-item">
@@ -566,7 +301,7 @@
                 <h3>Contact</h3>
                 <p>
                     <a href="tel:+17473483884">(747) 348-3884</a><br>
-                    <a href="https://ads.levelupab.com/estimate.html">Get AI Estimate</a>
+                    <a href="https://ads.levelupab.com/gallery.html">See Our Work</a>
                 </p>
             </div>
             <div class="info-item">
@@ -576,15 +311,24 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         &copy; 2026 Level Up Auto Body. All rights reserved.
     </footer>
 
-    <!-- MOBILE CTA -->
     <div class="mobile-cta">
-        <a href="tel:+17473483884">Call Now — (747) 348-3884</a>
+        <a href="tel:+17473483884">Call Now &mdash; (747) 348-3884</a>
     </div>
+
+    <script>
+    document.getElementById('estimate-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Show success message
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        // Scroll to success message
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    </script>
 
 </body>
 </html>

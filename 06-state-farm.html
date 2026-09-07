@@ -1,286 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>State Farm Auto Body Shop | Level Up Auto Body</title>
-<meta name="description" content="State Farm auto body repair in Canoga Park, CA. We work directly with State Farm — no hassle, no paperwork. Up to $1,000 deductible covered.">
-<meta property="og:title" content="State Farm Auto Body Shop | Level Up Auto Body">
-<meta property="og:description" content="State Farm auto body repair in Canoga Park, CA. We work directly with State Farm — no hassle, no paperwork. Up to $1,000 deductible covered.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<link rel="canonical" href="https://levelupab.com/06-state-farm.html">
-<link rel="icon" href="https://levelupab.com/favicon.ico" type="image/x-icon">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a2332;--dark:#0f1923;--accent:#2563eb;--accent-hover:#1d4ed8;--accent-light:#3b82f6;--white:#ffffff;--light:#f4f6f8;--gray:#6b7b8d;--text:#2c3e50;--green:#27ae60;--radius:8px;--shadow:0 2px 12px rgba(0,0,0,.08)}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;color:var(--text);line-height:1.6}
-a{text-decoration:none;color:inherit}
-.topbar{background:var(--dark);color:var(--white);padding:8px 0;font-size:14px}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.topbar a{color:var(--accent-light)}
-.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-.nav{background:var(--navy);padding:14px 0;position:sticky;top:0;z-index:100}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.5px}
-.logo span{color:var(--accent-light)}
-.nav-cta{background:var(--accent);color:var(--white);padding:10px 22px;border-radius:var(--radius);font-weight:700;font-size:15px;transition:background .2s}
-.nav-cta:hover{background:var(--accent-hover)}
-.hero{background:linear-gradient(135deg,var(--navy) 0%,#243447 100%);color:var(--white);padding:60px 0 50px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;background:rgba(37,99,235,.08);border-radius:50%}
-.hero .wrap{display:flex;gap:40px;align-items:center}
-.hero-text{flex:1;position:relative;z-index:1}
-.hero-badge{display:inline-block;background:rgba(37,99,235,.15);color:var(--accent-light);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase}
-.hero h1{font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;margin-bottom:16px}
-.hero h1 em{color:var(--accent-light);font-style:normal}
-.hero p{font-size:18px;color:rgba(255,255,255,.8);margin-bottom:24px;max-width:520px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:var(--white);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--accent-hover)}
-.btn-outline{border:2px solid rgba(255,255,255,.3);color:var(--white);padding:12px 28px;border-radius:var(--radius);font-weight:700;font-size:16px;transition:border-color .2s}
-.btn-outline:hover{border-color:var(--white)}
-.hero-form{background:var(--white);border-radius:12px;padding:28px;width:380px;flex-shrink:0;color:var(--text);box-shadow:0 8px 32px rgba(0,0,0,.2)}
-.hero-form h3{font-size:20px;margin-bottom:4px;color:var(--navy)}
-.hero-form .subtitle{font-size:14px;color:var(--gray);margin-bottom:18px}
-.hero-form input,.hero-form select{width:100%;padding:11px 14px;border:1px solid #dde2e8;border-radius:6px;font-size:15px;margin-bottom:10px;font-family:inherit}
-.hero-form input:focus,.hero-form select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-.hero-form .btn-primary{width:100%;justify-content:center;padding:14px}
-.form-note{font-size:12px;color:var(--gray);text-align:center;margin-top:8px}
-.trust-bar{background:var(--white);border-bottom:1px solid #e8ecf0;padding:20px 0}
-.trust-items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--navy)}
-.trust-icon{width:36px;height:36px;background:rgba(37,99,235,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.deductible-banner{background:linear-gradient(135deg,#1e40af 0%,#2563eb 50%,#3b82f6 100%);color:var(--white);padding:48px 0;text-align:center;position:relative;overflow:hidden}
-.deductible-banner::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;background:rgba(255,255,255,.05);border-radius:50%}
-.deductible-banner::after{content:'';position:absolute;bottom:-80px;right:-40px;width:350px;height:350px;background:rgba(255,255,255,.04);border-radius:50%}
-.deductible-banner .wrap{position:relative;z-index:1}
-.deductible-banner .ded-eyebrow{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:2px;opacity:.85;margin-bottom:10px}
-.deductible-banner .ded-amount{font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;margin-bottom:6px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
-.deductible-banner .ded-headline{font-size:clamp(22px,3.5vw,32px);font-weight:800;margin-bottom:12px}
-.deductible-banner .ded-sub{font-size:17px;opacity:.85;margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto}
-.deductible-banner .ded-cta{background:var(--white);color:var(--accent);padding:16px 36px;border-radius:var(--radius);font-weight:800;font-size:18px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(0,0,0,.15)}
-.deductible-banner .ded-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
-.deductible-banner .ded-badges{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
-.deductible-banner .ded-badge{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;opacity:.9}
-.reviews{padding:60px 0;background:var(--light)}
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.review{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-.stars{color:#f5a623;font-size:18px;margin-bottom:10px;letter-spacing:2px}
-.review p{font-size:15px;color:var(--text);margin-bottom:12px;font-style:italic}
-.reviewer{font-size:14px;font-weight:700;color:var(--navy)}
-.reviewer span{font-weight:400;color:var(--gray)}
-.cta-bottom{background:linear-gradient(135deg,var(--navy),#243447);color:var(--white);padding:50px 0;text-align:center}
-.cta-bottom h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:12px}
-.cta-bottom p{font-size:17px;opacity:.8;margin-bottom:24px}
-.cta-bottom .btn-primary{font-size:18px;padding:16px 36px}
-.cta-phone{font-size:28px;font-weight:800;color:var(--accent-light);margin-top:16px;display:inline-block}
-footer{background:var(--dark);color:rgba(255,255,255,.6);padding:36px 0;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-footer a{color:var(--accent-light)}
-.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:12px 16px;z-index:200;box-shadow:0 -2px 12px rgba(0,0,0,.2)}
-.mobile-cta .wrap{display:flex;gap:10px}
-.mobile-cta a{flex:1;text-align:center;padding:12px;border-radius:var(--radius);font-weight:700;font-size:15px}
-.mobile-cta .call-btn{background:var(--accent);color:var(--white)}
-.mobile-cta .form-btn{background:var(--white);color:var(--navy)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-@media(max-width:768px){
-  .hero .wrap{flex-direction:column}
-  .hero-form{width:100%}
-  .mobile-cta{display:block}
-  body{padding-bottom:68px}
-  .trust-items{gap:16px}
-  .trust-item{font-size:13px}
-}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AutoBodyShop",
-  "name": "Level Up Auto Body",
-  "image": "https://levelupab.com/logo.png",
-  "url": "https://levelupab.com",
-  "telephone": "+1-747-348-3884",
-  "email": "repairs@levelupab.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "21417 Ingomar St Ste. 4",
-    "addressLocality": "Canoga Park",
-    "addressRegion": "CA",
-    "postalCode": "91304",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 34.2011,
-    "longitude": -118.5976
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "07:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "07:00",
-      "closes": "13:00"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "bestRating": "5",
-    "ratingCount": "150"
-  },
-  "priceRange": "$$"
-}
-</script>
-<!-- Google Ads Conversion Tracking -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-4239303896"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','AW-4239303896');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Farm Collision Repair | Level Up Auto Body Canoga Park</title>
+    <meta name="description" content="State Farm collision repair in Canoga Park. We work with State Farm claims, cover your deductible up to $1,000, free loaner car. Call for free estimate.">
+    <link rel="canonical" href="https://ads.levelupab.com/06-state-farm.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoBodyShop","name":"Level Up Auto Body","image":"https://ads.levelupab.com/gallery.html","url":"https://levelupab.com","telephone":"+17473483884","address":{"@type":"PostalAddress","streetAddress":"21417 Ingomar St #4","addressLocality":"Canoga Park","addressRegion":"CA","postalCode":"91304","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.2011,"longitude":-118.5981},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","bestRating":"5","ratingCount":"87"},"priceRange":"$$","areaServed":["Canoga Park","Woodland Hills","Northridge","Chatsworth","Encino","Van Nuys","Reseda","Winnetka","West Hills","Tarzana","Sherman Oaks","North Hollywood","Burbank"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Auto Body Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Collision Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Auto Painting"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Dent Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bumper Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Frame Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Claims"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Estimates"}}]}}</script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --orange: #F26522;
+            --orange-dark: #D95A1E;
+            --dark: #1a1a1a;
+            --dark-2: #2a2a2a;
+            --gray: #666;
+            --gray-light: #f5f5f5;
+            --white: #ffffff;
+            --green: #22c55e;
+            --radius: 8px;
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--dark); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .header { background: var(--dark); color: var(--white); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+        .header-logo span { color: var(--orange); }
+        .header-phone { background: var(--orange); color: var(--white); text-decoration: none; padding: 10px 20px; border-radius: var(--radius); font-weight: 700; font-size: 15px; transition: background 0.2s; }
+        .header-phone:hover { background: var(--orange-dark); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero h1 span { color: var(--orange); }
+        .hero p { font-size: 18px; color: #ccc; max-width: 600px; margin: 0 auto 24px; }
+        .hero-cta { display: inline-block; background: var(--orange); color: var(--white); text-decoration: none; padding: 16px 40px; border-radius: var(--radius); font-weight: 700; font-size: 18px; transition: background 0.2s, transform 0.2s; }
+        .hero-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+        .hero-rating { margin-top: 20px; font-size: 14px; color: #aaa; }
+        .hero-rating .stars { color: #FFD700; font-size: 18px; }
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; background: var(--orange); color: var(--white); }
+        .benefit { padding: 24px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.2); }
+        .benefit:last-child { border-right: none; }
+        .benefit-icon { font-size: 28px; margin-bottom: 8px; }
+        .benefit h3 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .benefit p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        .services { padding: 60px 20px; background: var(--white); }
+        .section-title { text-align: center; font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .section-subtitle { text-align: center; color: var(--gray); font-size: 16px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .service-card { background: var(--gray-light); padding: 32px 24px; border-radius: var(--radius); text-align: center; transition: transform 0.2s; }
+        .service-card:hover { transform: translateY(-4px); }
+        .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { color: var(--gray); font-size: 14px; }
+        .cta-section { padding: 60px 20px; background: var(--gray-light); }
+        .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: start; }
+        @media (max-width: 768px) { .cta-grid { grid-template-columns: 1fr; } }
+        .form-card { background: var(--white); padding: 32px; border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .form-card h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        .form-card .form-sub { color: var(--gray); font-size: 14px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: var(--dark); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius); font-size: 15px; font-family: inherit; transition: border 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-submit { width: 100%; padding: 14px; background: var(--orange); color: var(--white); border: none; border-radius: var(--radius); font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+        .form-submit:hover { background: var(--orange-dark); }
+        .form-success { display: none; text-align: center; padding: 40px 20px; }
+        .form-success .check { font-size: 48px; color: var(--green); margin-bottom: 12px; }
+        .form-success h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .form-success p { color: var(--gray); font-size: 14px; margin-bottom: 16px; }
+        .form-success a { display: inline-block; background: var(--orange); color: var(--white); text-decoration: none; padding: 14px 32px; border-radius: var(--radius); font-weight: 700; font-size: 16px; }
+        .why-us h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; }
+        .why-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+        .why-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--orange); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; }
+        .why-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+        .why-text p { font-size: 14px; color: var(--gray); }
+        .testimonials { padding: 60px 20px; background: var(--white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .testimonial { background: var(--gray-light); padding: 28px; border-radius: var(--radius); }
+        .testimonial .stars { color: #FFD700; font-size: 16px; margin-bottom: 12px; display: block; }
+        .testimonial p { font-size: 15px; color: var(--dark); font-style: italic; margin-bottom: 12px; line-height: 1.6; }
+        .testimonial .author { font-size: 13px; font-weight: 700; color: var(--gray); }
+        .info-bar { background: var(--dark); color: var(--white); padding: 40px 20px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
+        .info-item h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); margin-bottom: 8px; }
+        .info-item p { font-size: 15px; color: #ccc; line-height: 1.8; }
+        .info-item a { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .footer { background: var(--dark-2); color: #888; text-align: center; padding: 20px; font-size: 13px; }
+        .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); padding: 14px 20px; z-index: 100; }
+        .mobile-cta a { display: block; text-align: center; color: var(--white); text-decoration: none; font-weight: 700; font-size: 18px; }
+        @media (max-width: 768px) { .mobile-cta { display: block; } body { padding-bottom: 60px; } }
+    </style>
 </head>
 <body>
 
-<!-- Top Bar -->
-<div class="topbar"><div class="wrap"><span>Mon–Fri 7AM–5PM | Sat 7AM–1PM | 21417 Ingomar St Ste. 4, Canoga Park, CA 91304</span><a href="tel:+17473483884">(747) 348-3884</a></div></div>
+    <header class="header">
+        <div class="header-logo">Level<span>Up</span> Auto Body</div>
+        <a href="tel:+17473483884" class="header-phone">Call (747) 348-3884</a>
+    </header>
 
-<!-- Nav -->
-<nav class="nav">
-  <div class="wrap">
-    <a href="#" class="logo">LEVEL<span>UP</span> AUTO BODY</a>
-    <a href="tel:+17473483884" class="nav-cta" onclick="gtag('event','conversion',{send_to:'AW-4239303896/phone_click',value:3000,currency:'USD'});">Call (747) 348-3884</a>
-  </div>
-</nav>
+    <section class="hero">
+        <h1>State Farm<br><span>Collision Repair</span></h1>
+        <p>We work with State Farm on your collision claim. No paperwork for you — we handle everything from estimate to repair.</p>
+        <a href="tel:+17473483884" class="hero-cta">Get Your Free Estimate</a>
+        <div class="hero-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>
+            4.8-Star Google Rating &bull; Trusted by Hundreds of Drivers
+        </div>
+    </section>
 
-<!-- Deductible Banner — First thing visitors see -->
-<section class="deductible-banner">
-  <div class="wrap">
-    <div class="ded-eyebrow">State Farm Policyholders — Save on Your Deductible</div>
-    <div class="ded-amount">$1,000</div>
-    <div class="ded-headline">Deductible Covered on State Farm Claims</div>
-    <a href="#form" class="ded-cta">See If You Qualify &#8594;</a>
-    <div class="ded-badges">
-      <div class="ded-badge">&#10003; Free Loaner Car</div>
-      <div class="ded-badge">&#10003; All Insurance Accepted</div>
-      <div class="ded-badge">&#10003; Lifetime Warranty</div>
+    <section class="benefits">
+        <div class="benefit">
+            <div class="benefit-icon">&#x1F4B0;</div>
+            <h3>Deductible Covered</h3>
+            <p>Up to $1,000</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">&#x1F697;</div>
+            <h3>Free Loaner Car</h3>
+            <p>While we repair yours</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">&#x1F6E1;</div>
+            <h3>Lifetime Warranty</h3>
+            <p>On all repairs</p>
+        </div>
+        <div class="benefit">
+            <div class="benefit-icon">&#x1F69A;</div>
+            <h3>Free Towing</h3>
+            <p>We come to you</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">From minor dents to major collisions, we handle it all with OEM parts and expert craftsmanship.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>State Farm Claims Accepted</h3>
+                <p>We work directly with State Farm on your collision claim. No need to go through their preferred shop list.</p>
+            </div>
+            <div class="service-card">
+                <h3>We Handle the Paperwork</h3>
+                <p>We manage your entire State Farm claim — from the initial report to final payment. Zero stress for you.</p>
+            </div>
+            <div class="service-card">
+                <h3>Deductible Coverage</h3>
+                <p>We cover your deductible up to $1,000 on your State Farm collision claim. You pay less out of pocket.</p>
+            </div>
+            <div class="service-card">
+                <h3>Direct Communication</h3>
+                <p>We communicate directly with State Farm adjusters for faster approvals and fewer delays.</p>
+            </div>
+            <div class="service-card">
+                <h3>Supplement Support</h3>
+                <p>If State Farm needs supplemental estimates, we handle the negotiations to ensure proper repair.</p>
+            </div>
+            <div class="service-card">
+                <h3>Free Loaner Car</h3>
+                <p>Free loaner car for the duration of your State Farm repair. No rental company hassle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-grid">
+            <div class="form-card">
+                <div id="form-container">
+                    <h2>Start Your State Farm Claim</h2>
+                    <p class="form-sub">Tell us about your State Farm claim and we'll contact you within 1 hour.</p>
+                    <form id="estimate-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Vehicle Year</label>
+                                <input type="text" id="year" name="year" placeholder="2024">
+                            </div>
+                            <div class="form-group">
+                                <label for="make">Make & Model</label>
+                                <input type="text" id="make" name="make" placeholder="Toyota Camry">
+                            </div>
+                        </div>
+                    <input type="hidden" name="insurance" value="State Farm">
+                        <div class="form-group">
+                            <label for="damage">Describe the Damage</label>
+                            <textarea id="damage" name="damage" rows="3" placeholder="Tell us what happened..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Request Free Estimate</button>
+                    </form>
+                </div>
+                <div class="form-success" id="form-success">
+                    <div class="check">&#10003;</div>
+                    <h3>Request Received!</h3>
+                    <p>We'll contact you within 1 hour. For the fastest response, call us now:</p>
+                    <a href="tel:+17473483884">Call (747) 348-3884</a>
+                </div>
+            </div>
+
+            <div class="why-us">
+                <h2>Why Choose Level Up Auto Body?</h2>
+                <div class="why-item">
+                    <div class="why-icon">$</div>
+                    <div class="why-text">
+                        <h3>Deductible Covered</h3>
+                        <p>Up to $1,000 of your State Farm deductible covered. More money stays in your pocket.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">✓</div>
+                    <div class="why-text">
+                        <h3>State Farm Claims Expert</h3>
+                        <p>We know State Farm's claims process inside and out. Faster approvals, fewer delays.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">📋</div>
+                    <div class="why-text">
+                        <h3>Zero Paperwork For You</h3>
+                        <p>We handle every form, every call, every negotiation with State Farm on your behalf.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">⏲</div>
+                    <div class="why-text">
+                        <h3>Fast Turnaround</h3>
+                        <p>Most collision repairs completed in 3-5 business days.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">∞</div>
+                    <div class="why-text">
+                        <h3>Lifetime Warranty</h3>
+                        <p>Every repair comes with our lifetime warranty on parts and labor.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🚗</div>
+                    <div class="why-text">
+                        <h3>Free Loaner Car</h3>
+                        <p>Free loaner car while your vehicle is being repaired. No extra cost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">4.8-star average from real Google reviews</p>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p>"Had a State Farm claim after a rear-end collision. Level Up handled everything — I didn't have to make a single call to State Farm. My car looks brand new."</p>
+                <span class="author">- Sarah M., Canoga Park</span>
+            </div>
+            <div class="testimonial">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p>"Level Up covered $500 of my deductible on my State Farm claim. Fast repair, great communication, and a free loaner car. Can't beat that."</p>
+                <span class="author">- David R., Woodland Hills</span>
+            </div>
+            <div class="testimonial">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p>"The best body shop for State Farm claims in the Valley. They know the process, they're fast, and the repair quality is outstanding."</p>
+                <span class="author">- Maria L., Northridge</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-bar">
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Location</h3>
+                <p>21417 Ingomar St #4<br>Canoga Park, CA 91304</p>
+            </div>
+            <div class="info-item">
+                <h3>Hours</h3>
+                <p>Mon - Fri: 7:00 AM - 5:00 PM<br>Sat: 7:00 AM - 1:00 PM<br>Sun: Closed</p>
+            </div>
+            <div class="info-item">
+                <h3>Contact</h3>
+                <p>
+                    <a href="tel:+17473483884">(747) 348-3884</a><br>
+                    <a href="https://ads.levelupab.com/gallery.html">See Our Work</a>
+                </p>
+            </div>
+            <div class="info-item">
+                <h3>Service Area</h3>
+                <p>Canoga Park, Woodland Hills, Northridge, Chatsworth, Encino, Van Nuys, Reseda & surrounding areas</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2026 Level Up Auto Body. All rights reserved.
+    </footer>
+
+    <div class="mobile-cta">
+        <a href="tel:+17473483884">Call Now &mdash; (747) 348-3884</a>
     </div>
-  </div>
-</section>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-text">
-      <div class="hero-badge">State Farm Claims Welcome</div>
-      <h1>Got a State Farm Claim? <em>We've Got You Covered.</em></h1>
-      <p>We work directly with State Farm. No hassle. No paperwork. We cover your deductible up to $1,000.</p>
-      <div class="hero-btns">
-        <a href="tel:+17473483884" class="btn-primary" onclick="gtag('event','conversion',{send_to:'AW-4239303896/phone_click',value:3000,currency:'USD'});">&#9742; Call Now</a>
-        <a href="/estimate.html" class="btn-outline">Get Free Estimate</a>
-      </div>
-    </div>
-    <form class="hero-form" id="form" action="https://formsubmit.co/repairs@levelupab.com" method="POST" onsubmit="gtag('event','conversion',{send_to:'AW-4239303896/bGbiCJLx8dwcEKPAyp4_',value:3000,currency:'USD'});">
-      <h3>Get a Free Estimate</h3>
-      <div class="subtitle">State Farm claims processed fast</div>
-      <input type="hidden" name="_subject" value="New Lead from State Farm Claims Welcome Landing Page">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <label for="name" class="sr-only">Full Name</label>
-      <input type="text" name="name" id="name" placeholder="Full Name" required>
-      <label for="phone" class="sr-only">Phone Number</label>
-      <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
-      <label for="vehicle" class="sr-only">Vehicle</label>
-      <input type="text" name="vehicle" id="vehicle" placeholder="Vehicle (Year, Make, Model)">
-      <label for="claim_number" class="sr-only">Claim Number</label>
-      <input type="text" name="claim_number" id="claim_number" placeholder="Claim Number (if you have one)">
-      <label for="insurance" class="sr-only">Insurance Provider</label>
-      <select name="insurance" id="insurance">
-          <option selected>State Farm</option>
-          <option>GEICO</option>
-          <option>Progressive</option>
-          <option>Allstate</option>
-          <option>USAA</option>
-          <option>Farmers</option>
-          <option>Wawanesa</option>
-          <option>Liberty Mutual</option>
-          <option>Nationwide</option>
-          <option>Tesla Insurance</option>
-          <option>Other</option>
-      </select>
-      <button type="submit" class="btn-primary">Submit Your State Farm Claim</button>
-      <div class="form-note">No obligation. Your info is kept private.</div>
-    </form>
-  </div>
-</section>
+    <script>
+    document.getElementById('estimate-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Show success message
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        // Scroll to success message
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    </script>
 
-<!-- Trust Bar -->
-<section class="trust-bar">
-  <div class="wrap">
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-icon">&#9733;</div> 4.8-Star Google Rating</div>
-      <div class="trust-item"><div class="trust-icon">&#128176;</div> Up to $1K Deductible Covered</div>
-      <div class="trust-item"><div class="trust-icon">&#128663;</div> Free Loaner Cars</div>
-      <div class="trust-item"><div class="trust-icon">&#128737;</div> Lifetime Warranty</div>
-    </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="reviews">
-  <div class="wrap">
-    <div class="review-grid">
-      <div class="review">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"They handled my State Farm claim and my car looks brand new. Covered part of my deductible too. So easy!"</p>
-        <div class="reviewer">Maria G. <span>— State Farm Policyholder</span></div>
-      </div>
-      <div class="review">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Level Up took care of everything with State Farm — paperwork, loaner car, perfect repair. Highly recommend."</p>
-        <div class="reviewer">James T. <span>— State Farm Policyholder</span></div>
-      </div>
-      <div class="review">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Best body shop for State Farm claims. They got everything approved fast and my car looks perfect."</p>
-        <div class="reviewer">Sarah L. <span>— State Farm Policyholder</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Bottom -->
-<section class="cta-bottom">
-  <div class="wrap">
-    <h2>Have a State Farm Claim? Let's Get Started.</h2>
-    <p>Free estimate. We handle your State Farm claim so you don't have to.</p>
-    <a href="#form" class="btn-primary">Get Your Free Estimate</a>
-    <br>
-    <a href="tel:+17473483884" class="cta-phone">(747) 348-3884</a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="wrap">
-    <span>&copy; 2026 Level Up Auto Body. All rights reserved.</span>
-    <span>21417 Ingomar St Ste. 4, Canoga Park, CA 91304</span>
-    <a href="mailto:repairs@levelupab.com">repairs@levelupab.com</a>
-  </div>
-</footer>
-
-<!-- Mobile Sticky CTA -->
-<div class="mobile-cta">
-  <div class="wrap">
-    <a href="tel:+17473483884" class="call-btn">&#9742; Call Now</a>
-    <a href="#form" class="form-btn">Free Estimate</a>
-  </div>
-</div>
-
-<script src="https://dni.calltracker.io/trackers/54c4f18d565a4fa5a91daefe77b732e2/tracker.js"></script>
 </body>
 </html>
