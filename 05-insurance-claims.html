@@ -322,11 +322,41 @@
     <script>
     document.getElementById('estimate-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        // Show success message
-        document.getElementById('form-container').style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-        // Scroll to success message
-        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var form = this;
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        var data = {
+            name: form.querySelector('[name="name"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            year: form.querySelector('[name="year"]') ? form.querySelector('[name="year"]').value : '',
+            make: form.querySelector('[name="make"]') ? form.querySelector('[name="make"]').value : '',
+            insurance: form.querySelector('[name="insurance"]') ? form.querySelector('[name="insurance"]').value : '',
+            damage: form.querySelector('[name="damage"]') ? form.querySelector('[name="damage"]').value : '',
+            _subject: 'New Estimate Request from ' + form.querySelector('[name="name"]').value,
+            _template: 'table',
+            _captcha: 'false'
+        };
+
+        fetch('https://formsubmit.co/ajax/repairs@levelupab.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(result) {
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function(error) {
+            // Even if FormSubmit fails, show success and the phone number
+            // so the customer can still call
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     });
     </script>
 
