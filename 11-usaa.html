@@ -62,6 +62,13 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .form-submit { width: 100%; padding: 14px; background: var(--orange); color: var(--white); border: none; border-radius: var(--radius); font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
         .form-submit:hover { background: var(--orange-dark); }
+        .sms-consent { margin: 4px 0 8px; display: flex; flex-direction: column; gap: 10px; }
+        .sms-consent label.consent-row { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; font-weight: 400; color: var(--gray); line-height: 1.5; cursor: pointer; margin: 0; }
+        .sms-consent input[type="checkbox"] { width: 18px; height: 18px; min-width: 18px; margin-top: 1px; padding: 0; accent-color: var(--orange); cursor: pointer; }
+        .sms-consent input[type="checkbox"]:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+        .sms-legal { font-size: 11px; color: var(--gray); line-height: 1.5; margin: 0; }
+        .sms-legal a, .sms-consent a { color: var(--orange-dark); }
+        .footer a { color: #ccc; margin: 0 6px; }
         .form-success { display: none; text-align: center; padding: 40px 20px; }
         .form-success .check { font-size: 48px; color: var(--green); margin-bottom: 12px; }
         .form-success h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
@@ -192,6 +199,17 @@
                             <label for="damage">Describe the Damage</label>
                             <textarea id="damage" name="damage" rows="3" placeholder="Tell us what happened..."></textarea>
                         </div>
+                        <div class="sms-consent">
+                            <label class="consent-row" for="sms_updates">
+                                <input type="checkbox" id="sms_updates" name="sms_updates" value="yes">
+                                <span>(Optional) I agree to receive text messages from Level Up Auto Body about my estimate, appointment, and repair status at the phone number provided. Message frequency varies. Message &amp; data rates may apply. Reply HELP for help or STOP to unsubscribe at any time.</span>
+                            </label>
+                            <label class="consent-row" for="sms_marketing">
+                                <input type="checkbox" id="sms_marketing" name="sms_marketing" value="yes">
+                                <span>(Optional) I agree to receive occasional promotional text messages from Level Up Auto Body. Up to 4 msgs/month. Message &amp; data rates may apply. Reply HELP for help or STOP to unsubscribe at any time.</span>
+                            </label>
+                            <p class="sms-legal">Consent to receive texts is not a condition of getting an estimate or service. See our <a href="/privacy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">SMS Terms &amp; Conditions</a>.</p>
+                        </div>
                         <button type="submit" class="form-submit">Request Free Estimate</button>
                     </form>
                 </div>
@@ -298,7 +316,7 @@
     </section>
 
     <footer class="footer">
-        &copy; 2026 Level Up Auto Body. All rights reserved.
+        &copy; 2026 Level Up Auto Body. All rights reserved.<br><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">SMS Terms &amp; Conditions</a>
     </footer>
 
     <div class="mobile-cta">
@@ -320,6 +338,10 @@
             make: form.querySelector('[name="make"]') ? form.querySelector('[name="make"]').value : '',
             insurance: form.querySelector('[name="insurance"]') ? form.querySelector('[name="insurance"]').value : '',
             damage: form.querySelector('[name="damage"]') ? form.querySelector('[name="damage"]').value : '',
+            sms_updates_consent: form.querySelector('[name="sms_updates"]').checked ? 'YES' : 'NO',
+            sms_marketing_consent: form.querySelector('[name="sms_marketing"]').checked ? 'YES' : 'NO',
+            consent_timestamp: new Date().toISOString(),
+            page: window.location.href,
             _subject: 'New Estimate Request from ' + form.querySelector('[name="name"]').value,
             _template: 'table',
             _captcha: 'false'
